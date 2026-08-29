@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Document</title>
+
+    <style>
+        @font-face {
+            font-family: "Minecraft";
+            src: url("minecraft.ttf");
+        }
+
+        body {
+            background-color: #808C66;
+            color: black;
+            font-family: "Minecraft", sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            font-family: "Minecraft", sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: "Minecraft", sans-serif;
+            cursor: pointer;
+        }
+
+        #secret {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Please enter a 5-digit code</h1>
+
+    <input type="password" id="password">
+    <button onclick="unlock()">Unlock</button>
+
+    <p id="wrong" style="display:none;">
+        Incorrect password.
+    </p>
+
+    <div id="secret">
+        <h2>/document/d/e/2PACX-1vRI6halNQfz6c2nTktemiHAcCgUme5EBa7S27iVtWxmJuvdOafPt7NNA-vF373IGEYwy6PJpLY0Ca_U/pub</h2>
+        <p></p>
+    </div>
+
+    <script>
+        function unlock() {
+            const password =
+                document.getElementById("password").value;
+
+            if (password === "AVnDE") {
+                document.getElementById("secret").style.display = "block";
+                document.getElementById("wrong").style.display = "none";
+            } else {
+                document.getElementById("wrong").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
